@@ -8,29 +8,60 @@
 </head>
 <body>
 
-  <!-- OPENING -->
-  <div id="opening" class="screen active blue-bg">
-    <p class="quote">“A proud milestone deserves to be shared”</p>
+  <!-- OPENING SCREEN -->
+  <section id="opening" class="screen active bg-primary">
+    <div class="container">
+      <p class="quote">“A proud milestone deserves to be shared”</p>
 
-    <div class="hello-box">
-      <h1 id="greeting">Hello</h1>
+      <div class="hello-box">
+        <h1 id="greeting">Hello</h1>
+      </div>
+
+      <p class="subtitle">You’re Invited to Hadzmi’s Graduation</p>
+
+      <button id="openBtn" class="open-btn">
+        Buka Undangan
+      </button>
     </div>
+  </section>
 
-    <p class="subtitle">You’re invited to Hadzmi’s Graduation</p>
+  <!-- INVITATION SCREEN (HIDDEN) -->
+  <section id="invitation" class="screen bg-primary">
+    <div class="card">
 
-    <button id="openBtn" class="open-btn">
-      <span class="icon">✉️</span>
-      Buka Undangan
-    </button>
-  </div>
+      <div class="white-strip">
+        <h2>Graduation Invitation</h2>
+      </div>
 
-  <!-- INVITATION IMAGE -->
-  <div id="invitation" class="screen">
-    <img src="./undangan.png" alt="Undangan Wisuda" />
-  </div>
+      <div class="date-section">
+        <h1>Selasa, 10 Februari 2026</h1>
+        <p>Pukul 12.30 WIB</p>
+      </div>
+
+      <div class="white-strip">
+        <p class="label">Lokasi</p>
+        <h3>Gedung Student Center</h3>
+        <p>Universitas Riau</p>
+
+        <div class="map-area">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+            alt="QR Maps"
+          />
+          <a
+            href="https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+            target="_blank"
+            class="map-btn"
+          >
+            📍 Open Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <audio id="bgMusic" src="./music.mp3" preload="auto"></audio>
-
   <script src="./script.js"></script>
 </body>
 </html>
