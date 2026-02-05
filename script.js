@@ -1,42 +1,34 @@
 // NAME FROM URL
 const params = new URLSearchParams(window.location.search);
-const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
+const nama = params.get("nama") || "Tamu Undangan";
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 
-// SCREEN SWITCH
+// ELEMENTS
 const openBtn = document.getElementById("openBtn");
 const opening = document.getElementById("opening");
 const invitation = document.getElementById("invitation");
 const music = document.getElementById("bgMusic");
 
-music.volume = 0.8;
-
+// OPEN BUTTON
 openBtn.addEventListener("click", () => {
   opening.classList.remove("active");
   invitation.classList.add("active");
   music.currentTime = 0;
+  music.volume = 0.7;
   music.play().catch(() => {});
 });
 
-// COUNTDOWN (GMT+7 / WIB)
+// COUNTDOWN (GMT+7)
 const targetDate = new Date("2026-02-10T12:30:00+07:00").getTime();
 
-function updateCountdown() {
+setInterval(() => {
   const now = new Date().getTime();
-  const distance = targetDate - now;
+  const diff = targetDate - now;
 
-  if (distance < 0) return;
+  if (diff <= 0) return;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("cd-days").innerText = days;
-  document.getElementById("cd-hours").innerText = hours;
-  document.getElementById("cd-minutes").innerText = minutes;
-  document.getElementById("cd-seconds").innerText = seconds;
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
+  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+}, 1000);
