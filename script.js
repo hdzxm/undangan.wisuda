@@ -1,57 +1,78 @@
-// Nama tamu
+// ==========================
+// AMBIL PARAMETER URL
+// ==========================
 const params = new URLSearchParams(window.location.search);
 
-// ambil nama opening
+// Nama untuk opening
 const tamuRaw = params.get("tamu") || "Tamu-Undangan";
 
-// ambil nama thank you (kalau tidak ada, fallback ke tamu)
+// Nama untuk thank you (boleh beda)
 const thanksRaw = params.get("thanks") || tamuRaw;
 
-// ganti "-" jadi spasi
+// "-" dibaca sebagai spasi
 const tamu = tamuRaw.replace(/-/g, " ");
 const thanksName = thanksRaw.replace(/-/g, " ");
 
-// isi ke halaman
-document.getElementById("greeting").innerText = `Hello, ${tamu}`;
+// ==========================
+// ISI TEKS KE HALAMAN
+// ==========================
+const greetingEl = document.getElementById("greeting");
+if (greetingEl) {
+  greetingEl.innerText = `Hello, ${tamu}`;
+}
 
 const guestNameEl = document.getElementById("guestName");
 if (guestNameEl) {
   guestNameEl.innerText = thanksName;
+}
 
-document.getElementById("greeting").innerText = `Hello, ${nama}`;
-document.getElementById("guestName").innerText = nama;
-
-// Open invitation
+// ==========================
+// TOMBOL BUKA UNDANGAN
+// ==========================
 const openBtn = document.getElementById("openBtn");
 const opening = document.getElementById("opening");
 const invitation = document.getElementById("invitation");
 const music = document.getElementById("bgMusic");
 
-openBtn.addEventListener("click", () => {
-  opening.style.display = "none";
-  invitation.style.display = "block";
-  music.volume = 0.8;
-  music.play().catch(() => {});
-});
+if (openBtn) {
+  openBtn.addEventListener("click", () => {
+    // sembunyikan opening
+    if (opening) opening.style.display = "none";
 
-// COUNTDOWN WIB (GMT+7 FIX)
+    // tampilkan undangan
+    if (invitation) invitation.style.display = "block";
+
+    // mainkan musik
+    if (music) {
+      music.volume = 0.8;
+      music.play().catch(() => {});
+    }
+  });
+}
+
+// ==========================
+// COUNTDOWN WIB (GMT+7)
+// ==========================
 const targetTime = new Date("2026-02-10T12:30:00+07:00").getTime();
 
 setInterval(() => {
-  const now = new Date().getTime();
+  const now = Date.now();
   const diff = targetTime - now;
 
   if (diff <= 0) return;
 
-  document.getElementById("days").innerText =
-    Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("hours").innerText =
-    Math.floor((diff / (1000 * 60 * 60)) % 24);
-  document.getElementById("minutes").innerText =
-    Math.floor((diff / (1000 * 60)) % 60);
-  document.getElementById("seconds").innerText =
-    Math.floor((diff / 1000) % 60);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  const dEl = document.getElementById("days");
+  const hEl = document.getElementById("hours");
+  const mEl = document.getElementById("minutes");
+  const sEl = document.getElementById("seconds");
+
+  if (dEl) dEl.innerText = days;
+  if (hEl) hEl.innerText = hours;
+  if (mEl) mEl.innerText = minutes;
+  if (sEl) sEl.innerText = seconds;
 }, 1000);
-
-
-
