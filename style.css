@@ -133,3 +133,21 @@ body {
     margin: auto;
   }
 }
+.thankyou-section {
+  padding: 40px 24px;
+}
+
+.thankyou-text {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 320px;
+  margin: auto;
+}
+
+.thankyou-text span {
+  font-weight: 600;
+}
+
+
