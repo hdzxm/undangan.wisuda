@@ -1,33 +1,29 @@
 // Nama tamu
 const params = new URLSearchParams(window.location.search);
 const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
-document.getElementById("greeting").innerText = `Hello, ${nama}`;
-// Isi nama di bagian Thank You
-const guestName = document.getElementById("guestName");
-if (guestName) {
-  guestName.innerText = nama;
-}
 
+document.getElementById("greeting").innerText = `Hello, ${nama}`;
+document.getElementById("guestName").innerText = nama;
 
 // Open invitation
 const openBtn = document.getElementById("openBtn");
 const opening = document.getElementById("opening");
-const invitation = document.querySelector(".invitation");
+const invitation = document.getElementById("invitation");
 const music = document.getElementById("bgMusic");
 
-openBtn.onclick = () => {
+openBtn.addEventListener("click", () => {
   opening.style.display = "none";
   invitation.style.display = "block";
   music.volume = 0.8;
-  music.play().catch(()=>{});
-};
+  music.play().catch(() => {});
+});
 
 // COUNTDOWN WIB (GMT+7 FIX)
-const target = new Date("2026-02-10T12:30:00+07:00").getTime();
+const targetTime = new Date("2026-02-10T12:30:00+07:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
-  const diff = target - now;
+  const diff = targetTime - now;
 
   if (diff <= 0) return;
 
@@ -40,4 +36,3 @@ setInterval(() => {
   document.getElementById("seconds").innerText =
     Math.floor((diff / 1000) % 60);
 }, 1000);
-
