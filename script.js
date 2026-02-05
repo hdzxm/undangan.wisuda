@@ -2,6 +2,12 @@
 const params = new URLSearchParams(window.location.search);
 const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
+// Isi nama di bagian Thank You
+const guestName = document.getElementById("guestName");
+if (guestName) {
+  guestName.innerText = nama;
+}
+
 
 // Open invitation
 const openBtn = document.getElementById("openBtn");
@@ -34,3 +40,4 @@ setInterval(() => {
   document.getElementById("seconds").innerText =
     Math.floor((diff / 1000) % 60);
 }, 1000);
+
