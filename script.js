@@ -17,7 +17,6 @@ document.getElementById("greeting").innerText = `Hello, ${tamu}`;
 const guestNameEl = document.getElementById("guestName");
 if (guestNameEl) {
   guestNameEl.innerText = thanksName;
-}
 
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 document.getElementById("guestName").innerText = nama;
@@ -53,4 +52,5 @@ setInterval(() => {
   document.getElementById("seconds").innerText =
     Math.floor((diff / 1000) % 60);
 }, 1000);
+
 
