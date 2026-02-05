@@ -146,8 +146,12 @@ body {
   margin: auto;
 }
 
-.thankyou-text span {
-  font-weight: 600;
+.thankyou-text {
+  margin: 0 auto;
+  max-width: 320px;
+  text-align: center;
 }
+
+
 
 
