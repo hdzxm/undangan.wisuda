@@ -1,6 +1,23 @@
 // Nama tamu
 const params = new URLSearchParams(window.location.search);
-const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
+
+// ambil nama opening
+const tamuRaw = params.get("tamu") || "Tamu-Undangan";
+
+// ambil nama thank you (kalau tidak ada, fallback ke tamu)
+const thanksRaw = params.get("thanks") || tamuRaw;
+
+// ganti "-" jadi spasi
+const tamu = tamuRaw.replace(/-/g, " ");
+const thanksName = thanksRaw.replace(/-/g, " ");
+
+// isi ke halaman
+document.getElementById("greeting").innerText = `Hello, ${tamu}`;
+
+const guestNameEl = document.getElementById("guestName");
+if (guestNameEl) {
+  guestNameEl.innerText = thanksName;
+}
 
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 document.getElementById("guestName").innerText = nama;
@@ -36,3 +53,4 @@ setInterval(() => {
   document.getElementById("seconds").innerText =
     Math.floor((diff / 1000) % 60);
 }, 1000);
+
