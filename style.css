@@ -1,204 +1,78 @@
-:root {
-  --primary: #513c3a;
-}
-
 * {
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
   margin: 0;
-  overflow: hidden;
-  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-/* SCREEN */
+body {
+  background: #513c3a;
+  color: #fff;
+}
+
+/* SCREENS */
 .screen {
-  position: fixed;
-  inset: 0;
+  min-height: 100vh;
   display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 32px;
+  text-align: center;
 }
 
 .screen.active {
   display: flex;
-  animation: fadeIn 0.6s ease;
-}
-
-/* BACKGROUND */
-.bg-primary {
-  background: var(--primary);
-  color: white;
 }
 
 /* OPENING */
-.container {
-  max-width: 420px;
-  padding: 24px;
-  text-align: center;
-}
-
 .quote {
   font-style: italic;
-  opacity: 0.85;
-  margin-bottom: 28px;
-}
-
-.hello-box {
-  background: rgba(255,255,255,0.15);
-  padding: 18px 28px;
-  border-radius: 16px;
-  margin-bottom: 12px;
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
 #greeting {
-  font-size: 42px;
+  font-size: 32px;
   margin: 0;
 }
 
 .subtitle {
-  margin-bottom: 36px;
+  margin: 12px 0 30px;
+  opacity: 0.9;
 }
 
-.open-btn {
-  background: white;
-  color: var(--primary);
+#openBtn {
+  padding: 14px 28px;
+  border-radius: 30px;
   border: none;
-  padding: 18px 26px;
-  font-size: 18px;
-  border-radius: 16px;
+  background: #fff;
+  color: #513c3a;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* CARD */
-.card {
-  width: 100%;
-  max-width: 420px;
-  background: var(--primary);
-  display: flex;
-  flex-direction: column;
+/* INVITATION */
+#invitation {
+  background: #513c3a;
+  overflow-y: auto;
 }
 
-/* WHITE STRIP */
-.white-strip {
-  background: white;
-  color: var(--primary);
-  padding: 24px;
-  text-align: center;
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 /* DATE */
-.date-section {
-  padding: 36px 24px;
-  text-align: center;
+.date-box {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 16px;
 }
 
 .day {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  opacity: 0.85;
-  margin-bottom: 6px;
-}
-
-.date {
-  margin: 0;
-  font-size: 36px;
-}
-
-.time {
-  margin-top: 10px;
-  opacity: 0.9;
-}
-
-/* COUNTDOWN */
-.countdown {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 24px;
-}
-
-.countdown div {
-  background: rgba(255,255,255,0.15);
-  border-radius: 12px;
-  padding: 12px;
-  width: 22%;
-}
-
-.countdown span {
-  font-size: 20px;
-  font-weight: bold;
-  display: block;
-}
-
-.countdown small {
-  font-size: 11px;
-  opacity: 0.8;
-}
-
-/* MAP */
-.label {
-  font-size: 12px;
-  letter-spacing: 1px;
-  opacity: 0.6;
-}
-
-.map-area {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: center;
-}
-
-.map-area img {
-  border-radius: 12px;
-}
-
-.map-btn {
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 14px;
-}
-
-/* CLOSING */
-.closing {
-  padding: 32px 24px;
-  text-align: center;
-}
-
-.closing-text {
-  font-style: italic;
-  opacity: 0.9;
-  margin-bottom: 24px;
-}
-
-/* PHOTO */
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 16px;
-}
-
-/* SIGNATURE */
-.signature strong {
-  display: block;
-}
-
-.signature span {
-  display: block;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
-}
+  lett
