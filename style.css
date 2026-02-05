@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+/* Screen */
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.screen.active {
+  display: flex;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Greeting */
+#greeting {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+/* Button */
+button {
+  padding: 16px 32px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #2f55d4;
+  color: white;
+  cursor: pointer;
+}
+
+/* Invitation image */
+#invitation img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  #greeting {
+    font-size: 26px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+}
