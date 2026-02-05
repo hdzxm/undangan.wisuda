@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
-const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
+const rawName = params.get("nama") || "Tamu Undangan";
+const nama = decodeURIComponent(rawName);
 
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 
@@ -8,7 +9,6 @@ const opening = document.getElementById("opening");
 const invitation = document.getElementById("invitation");
 const music = document.getElementById("bgMusic");
 
-// siapkan audio lebih awal
 music.volume = 0.8;
 
 openBtn.addEventListener("click", () => {
@@ -18,4 +18,3 @@ openBtn.addEventListener("click", () => {
   music.currentTime = 0;
   music.play().catch(() => {});
 });
-
