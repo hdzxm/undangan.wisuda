@@ -1,59 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graduation Invitation</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
-<!-- OPENING -->
-<section id="opening" class="opening active">
+<!-- OPENING (NO SCROLL) -->
+<section id="opening" class="screen active">
   <div class="opening-inner">
     <p class="quote">“A proud milestone deserves to be shared”</p>
-    <h1 id="greeting">Hello</h1>
+
+    <div class="hello-box">
+      <h1 id="greeting">Hello</h1>
+    </div>
+
     <p class="subtitle">You’re Invited to Hadzmi’s Graduation</p>
+
     <button id="openBtn">Buka Undangan</button>
   </div>
 </section>
 
-<!-- INVITATION -->
+<!-- INVITATION (SCROLLABLE) -->
 <section id="invitation" class="invitation">
 
-  <!-- HEADER -->
   <div class="section white">
     <h2>Graduation Invitation</h2>
   </div>
 
   <div class="section primary">
-  <p class="day">Selasa</p>
-  <h1 class="date">10 Februari 2026</h1>
-  <p class="time">Pukul 12.30 WIB</p>
+    <p class="day">Selasa</p>
+    <h1 class="date">10 Februari 2026</h1>
+    <p class="time">Pukul 12.30 WIB</p>
 
-  <!-- COUNTDOWN PINDAH KE SINI -->
-  <div class="countdown">
-    <div>
-      <span id="days">0</span>
-      <small>Days</small>
-    </div>
-    <div>
-      <span id="hours">0</span>
-      <small>Hours</small>
-    </div>
-    <div>
-      <span id="minutes">0</span>
-      <small>Minutes</small>
-    </div>
-    <div>
-      <span id="seconds">0</span>
-      <small>Seconds</small>
+    <!-- COUNTDOWN -->
+    <div class="countdown">
+      <div><span id="days">0</span><small>Hari</small></div>
+      <div><span id="hours">0</span><small>Jam</small></div>
+      <div><span id="minutes">0</span><small>Menit</small></div>
+      <div><span id="seconds">0</span><small>Detik</small></div>
     </div>
   </div>
-</div>
 
-
-  <!-- LOCATION -->
   <div class="section white">
     <p class="label">LOKASI</p>
     <h3>Gedung Student Center</h3>
@@ -62,38 +52,33 @@
     <img
       class="qr"
       src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau"
-      alt="QR Maps"
-    />
+      alt="QR Maps">
 
-    <a
-      class="map-btn"
-      href="https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z/data=!3m1!4b1!4m6!3m5!1s0x31d5a9704e41f757:0x3d6076df86ba00!8m2!3d0.4759036!4d101.3888969!16s%2Fg%2F11v66mt1r4?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
-      target="_blank">
+    <a class="map-btn"
+       href="https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+       target="_blank">
       Open Google Maps
     </a>
   </div>
 
-  <!-- THANK YOU SECTION -->
-<div class="section primary thankyou-section">
-  <p class="thankyou-text">
-    Thank you for being part of this<br />
-    meaningful milestone <span id="guestName">Nama Orang</span>.
-  </p>
-</div>
+  <!-- THANK YOU PERSONAL -->
+  <div class="section primary thankyou">
+    <p>
+      Thank you for being part of this<br>
+      meaningful milestone <span id="guestName"></span>.
+    </p>
+  </div>
 
-
-    <div class="signature">
-      <strong>Muhammad Azzmi, S.I.Kom</strong>
-      <span>Communication</span>
-      <span>Universitas Riau</span>
-    </div>
+  <!-- SIGNATURE -->
+  <div class="section white signature">
+    <strong>Muhammad Azzmi, S.I.Kom</strong>
+    <span>Communication</span>
+    <span>Universitas Riau</span>
   </div>
 
 </section>
 
-<audio id="bgMusic" src="music.mp3"></audio>
-<script src="script.js"></script>
+<audio id="bgMusic" src="music.mp3" preload="auto"></audio>
+<script src="script.js?v=3"></script>
 </body>
 </html>
-
-
