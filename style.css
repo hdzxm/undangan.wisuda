@@ -1,12 +1,11 @@
-* {
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
@@ -15,40 +14,28 @@ body {
 }
 
 /* SCREENS */
-.screen {
+.screen { display: none; width: 100%; }
+.screen.active { display: block; }
+
+/* OPENING */
+.screen-opening {
   min-height: 100vh;
-  display: none;
+  padding: 32px;
+  text-align: center;
+
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px;
-  text-align: center;
 }
 
-.screen.active {
-  display: flex;
-}
-
-/* OPENING */
-.quote {
-  font-style: italic;
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
-
-#greeting {
-  font-size: 32px;
-  margin: 0;
-}
-
-.subtitle {
-  margin: 12px 0 30px;
-  opacity: 0.9;
-}
+.quote { font-style: italic; opacity: .85; margin-bottom: 16px; }
+#greeting { font-size: 32px; margin: 0; }
+.subtitle { margin: 12px 0 28px; opacity: .9; }
 
 #openBtn {
   padding: 14px 28px;
-  border-radius: 30px;
+  border-radius: 28px;
   border: none;
   background: #fff;
   color: #513c3a;
@@ -57,104 +44,102 @@ body {
 }
 
 /* INVITATION */
-#invitation {
-  background: #513c3a;
-  overflow-y: auto;
+.screen-invitation {
+  padding: 32px;
+  text-align: center;
 }
 
-.section-title {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
+/* TITLE */
+.section-title { margin: 8px 0 24px; }
 
 /* DATE */
 .date-box {
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+  padding: 24px;
+  border-radius: 18px;
 }
 
-.day {
-  letter-spacing: 3px;
-  opacity: 0.8;
-}
-
-.date {
-  margin: 6px 0;
-  font-size: 34px;
-}
-
-.time {
-  opacity: 0.9;
-}
+.day { letter-spacing: 3px; opacity: .8; }
+.date { margin: 6px 0; font-size: 34px; }
+.time { opacity: .9; }
 
 /* COUNTDOWN */
 .countdown {
   display: flex;
-  gap: 16px;
-  margin: 30px 0;
+  gap: 12px;
+  justify-content: center;
+  margin: 24px 0;
 }
 
 .countdown div {
-  background: rgba(255,255,255,0.1);
-  padding: 12px;
-  border-radius: 12px;
-  min-width: 70px;
+  background: rgba(255,255,255,.1);
+  padding: 12px 10px;
+  border-radius: 14px;
+  min-width: 64px;
 }
 
 .countdown span {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.countdown small {
+  font-size: 11px;
+  opacity: .8;
 }
 
 /* LOCATION */
-.location {
-  margin-top: 40px;
-}
-
-.label {
-  letter-spacing: 2px;
-  opacity: 0.7;
-}
+.location { margin-top: 28px; }
+.label { letter-spacing: 2px; opacity: .7; }
 
 .qr {
-  margin: 20px 0;
+  margin: 16px 0;
   background: #fff;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 .map-btn {
   display: inline-block;
-  margin-top: 10px;
   padding: 12px 26px;
   background: #fff;
   color: #513c3a;
-  border-radius: 30px;
+  border-radius: 28px;
   text-decoration: none;
 }
 
-/* PHOTO */
-.photo-section img {
-  margin: 40px 0;
-  width: 200px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* PHOTO CARD */
+.photo-card {
+  margin: 36px auto 20px;
+  width: 220px;              /* ukuran petak */
+  max-width: 80%;
+  padding: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.35); /* border tipis */
+  border-radius: 18px;       /* sudut melengkung halus */
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;       /* lengkung dikit di dalam */
 }
 
 /* SIGNATURE */
-.signature h3 {
-  margin-bottom: 6px;
-}
-
-.signature p {
-  margin: 2px 0;
-  opacity: 0.85;
-}
+.signature h3 { margin: 12px 0 4px; }
+.signature p { margin: 2px 0; opacity: .85; }
 
 /* CLOSING */
 .closing {
-  margin: 40px 0 60px;
+  margin: 28px 0 48px;
   font-style: italic;
-  opacity: 0.8;
+  opacity: .85;
+}
+
+/* DESKTOP SCALE */
+@media (min-width: 768px) {
+  #greeting { font-size: 40px; }
+  .date { font-size: 40px; }
+  .photo-card { width: 260px; }
 }
