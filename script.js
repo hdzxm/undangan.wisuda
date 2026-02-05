@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const nama = params.get("nama") || "Tamu Undangan";
+const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
 
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 
@@ -18,3 +18,4 @@ openBtn.addEventListener("click", () => {
   music.currentTime = 0;
   music.play().catch(() => {});
 });
+
