@@ -7,36 +7,68 @@
 }
 
 html, body {
+  margin: 0;
   width: 100%;
   height: 100%;
-  margin: 0;
-  overflow: hidden; /* 🔥 INI KUNCI ANTI SCROLL */
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* SCREEN */
+/* OPENING */
 .screen {
   position: fixed;
   inset: 0;
+  background: var(--primary);
+  color: white;
   display: none;
-  justify-content: center;
-  align-items: center;
 }
 
 .screen.active {
   display: flex;
-  animation: fadeIn 0.6s ease;
 }
 
-/* BACKGROUND */
-.bg-primary {
-  background: var(--primary);
-  color: white;
+.opening-inner {
+  margin: auto;
+  text-align: center;
+  padding: 24px;
+}
+
+.quote {
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.hello-box {
+  background: rgba(255,255,255,0.18);
+  padding: 18px 28px;
+  border-radius: 18px;
+  margin: 20px auto;
+  display: inline-block;
+}
+
+.hello-box h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.subtitle {
+  margin: 20px 0 32px;
+}
+
+#openBtn {
+  padding: 16px 26px;
+  border: none;
+  border-radius: 16px;
+  background: white;
+  color: var(--primary);
+  font-size: 16px;
+  cursor: pointer;
 }
 
 /* INVITATION */
 .invitation {
   display: none;
+  background: white;
 }
 
 .section {
@@ -44,12 +76,12 @@ html, body {
   text-align: center;
 }
 
-.white {
+.section.white {
   background: white;
   color: var(--primary);
 }
 
-.primary {
+.section.primary {
   background: var(--primary);
   color: white;
 }
@@ -69,13 +101,32 @@ html, body {
   opacity: 0.9;
 }
 
-/* QR */
-.qr {
-  margin: 20px 0;
-  width: 200px;
+/* COUNTDOWN */
+.countdown {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
 }
 
-/* BUTTON */
+.countdown div {
+  background: rgba(255,255,255,0.15);
+  padding: 14px;
+  border-radius: 14px;
+  min-width: 68px;
+}
+
+.countdown span {
+  font-size: 22px;
+  display: block;
+}
+
+/* MAP */
+.qr {
+  width: 200px;
+  margin: 20px 0;
+}
+
 .map-btn {
   display: inline-block;
   margin-top: 12px;
@@ -86,33 +137,26 @@ html, body {
   text-decoration: none;
 }
 
-/* COUNTDOWN */
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.countdown div {
-  background: rgba(255,255,255,0.15);
-  padding: 14px;
-  border-radius: 14px;
-  min-width: 70px;
-}
-
-.countdown span {
-  font-size: 22px;
-  display: block;
-}
-
-/* CLOSING */
-.closing {
-  font-style: italic;
-}
-
-.signature {
-  margin-top: 24px;
+/* THANK YOU */
+.thankyou p {
+  max-width: 320px;
+  margin: auto;
+  font-size: 18px;
   line-height: 1.6;
+}
+
+.thankyou span {
+  font-weight: 600;
+}
+
+/* SIGNATURE */
+.signature {
+  line-height: 1.6;
+}
+
+.signature span {
+  display: block;
+  font-size: 14px;
 }
 
 /* DESKTOP */
@@ -122,26 +166,3 @@ html, body {
     margin: auto;
   }
 }
-.thankyou-section {
-  padding: 40px 24px;
-}
-
-.thankyou-text {
-  color: white;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: center;
-  max-width: 320px;
-  margin: auto;
-}
-
-.thankyou-text {
-  margin: 0 auto;
-  max-width: 320px;
-  text-align: center;
-}
-
-
-
-
-
