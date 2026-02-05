@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Wisuda</title>
+  <title>Graduation Invitation</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -19,26 +19,39 @@
 
       <p class="subtitle">You’re Invited to Hadzmi’s Graduation</p>
 
+      <!-- ❌ EMOJI DIHAPUS -->
       <button id="openBtn" class="open-btn">
         Buka Undangan
       </button>
     </div>
   </section>
 
-  <!-- INVITATION SCREEN (HIDDEN) -->
+  <!-- INVITATION SCREEN -->
   <section id="invitation" class="screen bg-primary">
+
     <div class="card">
 
+      <!-- TITLE -->
       <div class="white-strip">
         <h2>Graduation Invitation</h2>
       </div>
 
+      <!-- DATE + TIME -->
       <div class="date-section">
-        <h1>Selasa,
-          10 Februari 2026</h1>
-        <p>Pukul 12.30 WIB</p>
+        <p class="day">Selasa</p>
+        <h1 class="date">10 Februari 2026</h1>
+        <p class="time">Pukul 12.30 WIB</p>
+
+        <!-- COUNTDOWN -->
+        <div id="countdown" class="countdown">
+          <div><span id="cd-days">0</span><small>Hari</small></div>
+          <div><span id="cd-hours">0</span><small>Jam</small></div>
+          <div><span id="cd-minutes">0</span><small>Menit</small></div>
+          <div><span id="cd-seconds">0</span><small>Detik</small></div>
+        </div>
       </div>
 
+      <!-- LOCATION -->
       <div class="white-strip">
         <p class="label">Lokasi</p>
         <h3>Gedung Student Center</h3>
@@ -46,16 +59,34 @@
 
         <div class="map-area">
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
             alt="QR Maps"
           />
           <a
-            href="https://www.google.com/maps/place/Student+Center+Universitas+Riau"
-            target="_blank"
             class="map-btn"
+            href="hthttps://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z/data=!3m1!4b1!4m6!3m5!1s0x31d5a9704e41f757:0x3d6076df86ba00!8m2!3d0.4759036!4d101.3888969!16s%2Fg%2F11v66mt1r4?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
+            target="_blank"
           >
-            📍 Open Google Maps
+            Open Google Maps
           </a>
+        </div>
+      </div>
+
+      <!-- CLOSING -->
+      <div class="closing">
+        <p class="closing-text">
+          Thank you for being part of this meaningful milestone.
+        </p>
+
+        <!-- PHOTO -->
+        <!-- 🔴 GANTI FILE INI DENGAN FOTO KAMU -->
+        <img src="./foto-sidang.jpg" alt="Hadzmi Graduation Photo" class="profile-photo"/>
+
+        <!-- SIGNATURE -->
+        <div class="signature">
+          <strong>Muhammad Azzmi, S.I.Kom</strong>
+          <span>Communication</span>
+          <span>Universitas Riau</span>
         </div>
       </div>
 
@@ -66,4 +97,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
