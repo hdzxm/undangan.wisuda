@@ -33,11 +33,9 @@ html, body {
 }
 
 .quote {
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  margin: 6px 0 20px;
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 32px;
 }
 
 .hello-box {
@@ -168,5 +166,6 @@ html, body {
     margin: auto;
   }
 }
+
 
 
