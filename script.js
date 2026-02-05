@@ -1,6 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const rawName = params.get("nama") || "Tamu Undangan";
-const nama = decodeURIComponent(rawName);
+const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
 
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 
