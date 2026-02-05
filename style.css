@@ -33,11 +33,11 @@ html, body {
 }
 
 .quote {
-  margin-bottom: 14px; /* DIPERKECIL */
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  margin: 8px 0 24px; /* DIPERKECIL */
+  margin: 6px 0 20px;
 }
 
 .hello-box {
@@ -168,4 +168,5 @@ html, body {
     margin: auto;
   }
 }
+
 
