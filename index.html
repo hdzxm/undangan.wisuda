@@ -1,99 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Graduation Invitation</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- OPENING SCREEN -->
-  <section id="opening" class="screen active bg-primary">
-    <div class="container">
-      <p class="quote">“A proud milestone deserves to be shared”</p>
+<!-- OPENING -->
+<section id="opening" class="screen active">
+  <p class="quote">“A proud milestone deserves to be shared”</p>
+  <h1 id="greeting">Hello, Tamu Undangan</h1>
+  <p class="subtitle">You’re invited to Hadzmi’s Graduation</p>
+  <button id="openBtn">Buka Undangan</button>
+</section>
 
-      <div class="hello-box">
-        <h1 id="greeting">Hello</h1>
-      </div>
+<!-- INVITATION -->
+<section id="invitation" class="screen">
 
-      <p class="subtitle">You’re Invited to Hadzmi’s Graduation</p>
+  <h2 class="section-title">Graduation Invitation</h2>
 
-      <!-- ❌ EMOJI DIHAPUS -->
-      <button id="openBtn" class="open-btn">
-        Buka Undangan
-      </button>
-    </div>
-  </section>
+  <!-- DATE -->
+  <div class="date-box">
+    <p class="day">Selasa</p>
+    <h1 class="date">10 Februari 2026</h1>
+    <p class="time">Pukul 12.30 WIB</p>
+  </div>
 
-  <!-- INVITATION SCREEN -->
-  <section id="invitation" class="screen bg-primary">
+  <!-- COUNTDOWN -->
+  <div class="countdown" id="countdown">
+    <div><span id="days">0</span><small>Days</small></div>
+    <div><span id="hours">0</span><small>Hours</small></div>
+    <div><span id="minutes">0</span><small>Minutes</small></div>
+    <div><span id="seconds">0</span><small>Seconds</small></div>
+  </div>
 
-    <div class="card">
+  <!-- LOCATION -->
+  <div class="location">
+    <p class="label">LOKASI</p>
+    <h3>Gedung Student Center</h3>
+    <p>Universitas Riau</p>
 
-      <!-- TITLE -->
-      <div class="white-strip">
-        <h2>Graduation Invitation</h2>
-      </div>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z" alt="QR Maps" />
 
-      <!-- DATE + TIME -->
-      <div class="date-section">
-        <p class="day">Selasa</p>
-        <h1 class="date">10 Februari 2026</h1>
-        <p class="time">Pukul 12.30 WIB</p>
+    <a class="map-btn" href="https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z" target="_blank">
+      Open Google Maps
+    </a>
+  </div>
 
-        <!-- COUNTDOWN -->
-        <div id="countdown" class="countdown">
-          <div><span id="cd-days">0</span><small>Hari</small></div>
-          <div><span id="cd-hours">0</span><small>Jam</small></div>
-          <div><span id="cd-minutes">0</span><small>Menit</small></div>
-          <div><span id="cd-seconds">0</span><small>Detik</small></div>
-        </div>
-      </div>
+  <!-- PHOTO -->
+  <div class="photo-section">
+    <img src="./foto-sidang.jpg" alt="Foto Sidang" />
+  </div>
 
-      <!-- LOCATION -->
-      <div class="white-strip">
-        <p class="label">Lokasi</p>
-        <h3>Gedung Student Center</h3>
-        <p>Universitas Riau</p>
+  <!-- SIGNATURE -->
+  <div class="signature">
+    <h3>Muhammad Azzmi, S.I.Kom</h3>
+    <p>Communication</p>
+    <p>Universitas Riau</p>
+  </div>
 
-        <div class="map-area">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
-            alt="QR Maps"
-          />
-          <a
-            class="map-btn"
-            href="hthttps://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z/data=!3m1!4b1!4m6!3m5!1s0x31d5a9704e41f757:0x3d6076df86ba00!8m2!3d0.4759036!4d101.3888969!16s%2Fg%2F11v66mt1r4?entry=ttu&g_ep=EgoyMDI2MDIwMy4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D"
-            target="_blank"
-          >
-            Open Google Maps
-          </a>
-        </div>
-      </div>
+  <!-- CLOSING -->
+  <p class="closing">
+    Thank you for being part of this meaningful milestone.
+  </p>
 
-      <!-- CLOSING -->
-      <div class="closing">
-        <p class="closing-text">
-          Thank you for being part of this meaningful milestone.
-        </p>
+</section>
 
-        <!-- PHOTO -->
-        <!-- 🔴 GANTI FILE INI DENGAN FOTO KAMU -->
-        <img src="./foto-sidang.jpg" alt="Hadzmi Graduation Photo" class="profile-photo"/>
-
-        <!-- SIGNATURE -->
-        <div class="signature">
-          <strong>Muhammad Azzmi, S.I.Kom</strong>
-          <span>Communication</span>
-          <span>Universitas Riau</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <audio id="bgMusic" src="./music.mp3" preload="auto"></audio>
-  <script src="./script.js"></script>
+<audio id="bgMusic" src="music.mp3"></audio>
+<script src="script.js"></script>
 </body>
 </html>
