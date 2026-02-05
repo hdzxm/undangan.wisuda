@@ -1,36 +1,26 @@
-// NAME FROM URL (support %20)
+// Nama dari URL
 const params = new URLSearchParams(window.location.search);
 const nama = decodeURIComponent(params.get("nama") || "Tamu Undangan");
 document.getElementById("greeting").innerText = `Hello, ${nama}`;
 
-// OPEN BUTTON
-const openBtn = document.getElementById("openBtn");
-const opening = document.getElementById("opening");
-const invitation = document.getElementById("invitation");
-const music = document.getElementById("bgMusic");
+// Switch screen
+document.getElementById("openBtn").onclick = () => {
+  document.getElementById("opening").classList.remove("active");
+  document.getElementById("invitation").classList.add("active");
 
-openBtn.addEventListener("click", () => {
-  opening.classList.remove("active");
-  invitation.classList.add("active");
+  const music = document.getElementById("bgMusic");
   music.volume = 0.7;
-  music.currentTime = 0;
   music.play().catch(() => {});
-});
+};
 
-// COUNTDOWN (GMT+7 / WIB)
-const targetDate = new Date("2026-02-10T12:30:00+07:00").getTime();
-
+// Countdown WIB
+const target = new Date("2026-02-10T12:30:00+07:00").getTime();
 setInterval(() => {
-  const now = Date.now();
-  const diff = targetDate - now;
-  if (diff <= 0) return;
+  const d = target - Date.now();
+  if (d <= 0) return;
 
-  document.getElementById("days").innerText =
-    Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("hours").innerText =
-    Math.floor((diff / (1000 * 60 * 60)) % 24);
-  document.getElementById("minutes").innerText =
-    Math.floor((diff / (1000 * 60)) % 60);
-  document.getElementById("seconds").innerText =
-    Math.floor((diff / 1000) % 60);
+  days.innerText = Math.floor(d / 86400000);
+  hours.innerText = Math.floor((d / 3600000) % 24);
+  minutes.innerText = Math.floor((d / 60000) % 60);
+  seconds.innerText = Math.floor((d / 1000) % 60);
 }, 1000);
