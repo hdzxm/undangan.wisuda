@@ -6,11 +6,10 @@
   <title>Graduation Invitation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <!-- OPENING -->
-<section id="opening" class="screen active">
+<section id="opening" class="screen screen-opening active">
   <p class="quote">“A proud milestone deserves to be shared”</p>
   <h1 id="greeting">Hello, Tamu Undangan</h1>
   <p class="subtitle">You’re invited to Hadzmi’s Graduation</p>
@@ -18,7 +17,7 @@
 </section>
 
 <!-- INVITATION -->
-<section id="invitation" class="screen">
+<section id="invitation" class="screen screen-invitation">
 
   <h2 class="section-title">Graduation Invitation</h2>
 
@@ -30,11 +29,11 @@
   </div>
 
   <!-- COUNTDOWN -->
-  <div class="countdown" id="countdown">
-    <div><span id="days">0</span><small>Days</small></div>
-    <div><span id="hours">0</span><small>Hours</small></div>
-    <div><span id="minutes">0</span><small>Minutes</small></div>
-    <div><span id="seconds">0</span><small>Seconds</small></div>
+  <div class="countdown">
+    <div><span id="days">0</span><small>Hari</small></div>
+    <div><span id="hours">0</span><small>Jam</small></div>
+    <div><span id="minutes">0</span><small>Menit</small></div>
+    <div><span id="seconds">0</span><small>Detik</small></div>
   </div>
 
   <!-- LOCATION -->
@@ -43,16 +42,24 @@
     <h3>Gedung Student Center</h3>
     <p>Universitas Riau</p>
 
-    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z" alt="QR Maps" />
+    <img
+      class="qr"
+      src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
+      alt="QR Maps"
+    />
 
-    <a class="map-btn" href="https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z" target="_blank">
+    <a
+      class="map-btn"
+      href="https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
+      target="_blank"
+    >
       Open Google Maps
     </a>
   </div>
 
-  <!-- PHOTO -->
-  <div class="photo-section">
-    <img src="./foto-sidang.jpg" alt="Foto Sidang" />
+  <!-- PHOTO CARD -->
+  <div class="photo-card">
+    <img src="foto-sidang.jpg" alt="Foto Sidang Hadzmi" />
   </div>
 
   <!-- SIGNATURE -->
@@ -69,7 +76,7 @@
 
 </section>
 
-<audio id="bgMusic" src="music.mp3"></audio>
+<audio id="bgMusic" src="music.mp3" preload="auto"></audio>
 <script src="script.js"></script>
 </body>
 </html>
