@@ -1,81 +1,98 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Graduation Invitation</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-<!-- OPENING (TIDAK DIUBAH STRUKTURNYA) -->
-<section id="opening" class="opening active">
-  <p class="quote">“A proud milestone deserves to be shared”</p>
-  <h1 id="greeting">Hello, Tamu Undangan</h1>
-  <p class="subtitle">You’re invited to Hadzmi’s Graduation</p>
-  <button id="openBtn">Buka Undangan</button>
-</section>
+  <!-- OPENING (NO SCROLL) -->
+  <section id="opening" class="screen active bg-primary no-scroll">
+    <div class="container">
+      <p class="quote">“A proud milestone deserves to be shared”</p>
 
-<!-- INVITATION -->
-<section id="invitation" class="invitation">
+      <div class="hello-box">
+        <h1 id="greeting">Hello</h1>
+      </div>
 
-  <h2>Graduation Invitation</h2>
+      <p class="subtitle">You’re Invited to Hadzmi’s Graduation</p>
 
-  <!-- DATE -->
-  <div class="date-box">
-    <p class="day">Selasa</p>
-    <h1>10 Februari 2026</h1>
-    <p>Pukul 12.30 WIB</p>
-  </div>
+      <button id="openBtn" class="open-btn">
+        Buka Undangan
+      </button>
+    </div>
+  </section>
 
-  <!-- COUNTDOWN -->
-  <div class="countdown">
-    <div><span id="days">0</span><small>Hari</small></div>
-    <div><span id="hours">0</span><small>Jam</small></div>
-    <div><span id="minutes">0</span><small>Menit</small></div>
-    <div><span id="seconds">0</span><small>Detik</small></div>
-  </div>
+  <!-- INVITATION (SCROLLABLE) -->
+  <section id="invitation" class="screen bg-primary scrollable">
 
-  <!-- LOCATION -->
-  <div class="location">
-    <p class="label">LOKASI</p>
-    <h3>Gedung Student Center</h3>
-    <p>Universitas Riau</p>
+    <!-- TITLE -->
+    <div class="section-white">
+      <div class="inner">
+        <h2>Graduation Invitation</h2>
+      </div>
+    </div>
 
-    <img
-      class="qr"
-      src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
-      alt="QR Maps"
-    />
+    <!-- DATE -->
+    <div class="section-primary">
+      <div class="inner">
+        <p class="day">Selasa</p>
+        <h1 class="date">10 Februari 2026</h1>
+        <p class="time">Pukul 12.30 WIB</p>
 
-    <a
-      class="map-btn"
-      href="https://www.google.com/maps/place/Student+Center+Universitas+Riau/@0.475909,101.386322,17z"
-      target="_blank">
-      Open Google Maps
-    </a>
-  </div>
+        <!-- COUNTDOWN -->
+        <div id="countdown" class="countdown">
+          <div><span id="d">0</span><small>Days</small></div>
+          <div><span id="h">0</span><small>Hours</small></div>
+          <div><span id="m">0</span><small>Minutes</small></div>
+          <div><span id="s">0</span><small>Seconds</small></div>
+        </div>
+      </div>
+    </div>
 
-  <!-- FOTO (PETAK, TIDAK FULL) -->
-  <div class="photo-card">
-    <img src="foto-sidang.jpg" alt="Foto Sidang Hadzmi">
-  </div>
+    <!-- LOCATION -->
+    <div class="section-white">
+      <div class="inner">
+        <p class="label">Lokasi</p>
+        <h3>Gedung Student Center</h3>
+        <p>Universitas Riau</p>
 
-  <!-- SIGNATURE -->
-  <div class="signature">
-    <strong>Muhammad Azzmi, S.I.Kom</strong>
-    <span>Communication</span>
-    <span>Universitas Riau</span>
-  </div>
+        <div class="map-area">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+            alt="QR Maps"
+          />
+          <a
+            class="map-btn"
+            href="https://www.google.com/maps/place/Student+Center+Universitas+Riau"
+            target="_blank"
+          >
+            Open Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <!-- CLOSING -->
-  <p class="closing">
-    Thank you for being part of this meaningful milestone.
-  </p>
+    <!-- CLOSING -->
+    <div class="section-primary">
+      <div class="inner">
+        <p class="closing">
+          Thank you for being part of this meaningful milestone.
+        </p>
 
-</section>
+        <div class="signature">
+          <strong>Muhammad Azzmi, S.I.Kom</strong>
+          <span>Communication</span>
+          <span>Universitas Riau</span>
+        </div>
+      </div>
+    </div>
 
-<audio id="bgMusic" src="music.mp3"></audio>
-<script src="script.js"></script>
+  </section>
+
+  <audio id="bgMusic" src="./music.mp3" preload="auto"></audio>
+  <script src="./script.js"></script>
 </body>
 </html>
