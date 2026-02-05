@@ -45,6 +45,7 @@ if (openBtn) {
     // mainkan musik
     if (music) {
       music.volume = 0.8;
+      music.loop = true; // 🔁 BIAR NGULANG TERUS
       music.play().catch(() => {});
     }
   });
@@ -76,3 +77,4 @@ setInterval(() => {
   if (mEl) mEl.innerText = minutes;
   if (sEl) sEl.innerText = seconds;
 }, 1000);
+
