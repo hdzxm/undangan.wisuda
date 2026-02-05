@@ -33,9 +33,11 @@ html, body {
 }
 
 .quote {
-  font-style: italic;
-  opacity: 0.85;
-  margin-bottom: 28px;
+  margin-bottom: 14px; /* DIPERKECIL */
+}
+
+.subtitle {
+  margin: 8px 0 24px; /* DIPERKECIL */
 }
 
 .hello-box {
@@ -166,3 +168,4 @@ html, body {
     margin: auto;
   }
 }
+
