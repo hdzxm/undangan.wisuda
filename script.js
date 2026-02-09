@@ -54,7 +54,7 @@ if (openBtn) {
 // ==========================
 // COUNTDOWN WIB (GMT+7)
 // ==========================
-const targetTime = new Date("2026-02-10T15:30:00+07:00").getTime();
+const targetTime = new Date("2026-02-10T16:00:00+07:00").getTime();
 
 setInterval(() => {
   const now = Date.now();
@@ -77,5 +77,6 @@ setInterval(() => {
   if (mEl) mEl.innerText = minutes;
   if (sEl) sEl.innerText = seconds;
 }, 1000);
+
 
 
